@@ -1,0 +1,25 @@
+{
+  "name": "the-last-fmylife-client",
+  "description": "Client app to display the last fmylife stories",
+  "version": "0.0.0",
+  "authors": [
+    "Simon MAHÉ <mahe.simon@gmail.com>"
+  ],
+  "license": "AGPL-3.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.2.0",
+    "underscore": "~1.6.0",
+    "backbone": "~1.1.2",
+    "fontawesome": "~4.1.0",
+    "moment": "~2.8.1"
+  }
+}
