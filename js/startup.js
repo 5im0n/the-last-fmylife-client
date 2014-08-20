@@ -29,14 +29,17 @@ requirejs.config({
 		/* #############
 		* Routers
 		*/
-		router			: 'routers/router',
+		router			    : 'routers/router',
 
 
 		/* #############
 		* Views
 		*/
 		headerView			: 'views/header',
-		footerView			: 'views/footer'
+		footerView			: 'views/footer',
+		aboutView			: 'views/about',
+		storiesView         : 'views/stories',
+		notFoundView        : 'views/404'
 
 	},
 

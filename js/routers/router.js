@@ -11,8 +11,11 @@ define([
 
 	'headerView',
 	'footerView',
+	'aboutView',
+	'storiesView',
+	'notFoundView'
 
-], function(Common, $, Backbone, HeaderView, FooterView) {
+], function(Common, $, Backbone, HeaderView, FooterView, AboutView, StoriesView, NotFoundView) {
 
 	'use strict';
 
@@ -65,21 +68,21 @@ define([
 		/** Home page
 		*/
 		index: function() {
-			console.log('Home page');
+			Common.views.main = new StoriesView();
 		},
 
 
 		/** About the App
 		*/
 		about: function() {
-			console.log('About page');
+			Common.views.main = new AboutView();
 		},
 
 
 		/** Not found
 		*/
 		notFound: function() {
-			console.error('Page not found');
+			Common.views.main = new NotFoundView();
 		}
 
 
