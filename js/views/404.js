@@ -25,7 +25,7 @@ define([
 
 		/** View Initialization
 		*/
-		initialize: function () {
+		initialize: function() {
 			this.render();
 		},
 

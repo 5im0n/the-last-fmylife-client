@@ -6,9 +6,11 @@
 
 define([
 	'jquery',
-	'backbone'
+	'backbone',
 
-], function($, Backbone) {
+	'stories'
+
+], function($, Backbone, Stories) {
 
 	'use strict';
 
@@ -32,8 +34,15 @@ define([
 
 		/** View Initialization
 		*/
-		initialize: function () {
-			this.render();
+		initialize: function() {
+			var self = this;
+
+			this.s = new Stories();
+
+			// Fetch the collection //
+			this.s.fetch().done(function() {
+				self.render();
+			});
 		},
 
 
@@ -46,6 +55,7 @@ define([
 			$.get(this.templateHTML, function(templateData) {
 
 				var template = _.template(templateData, {
+					numberOfStories: self.s.count
 				});
 
 				$(self.el).html(template);

@@ -27,7 +27,7 @@ define([
 
 		/** View Initialization
 		*/
-		initialize: function () {
+		initialize: function() {
 			this.render();
 		},
 
@@ -35,7 +35,7 @@ define([
 
 		/** Display the view
 		*/
-		render: function () {
+		render: function() {
 			var self = this;
 
 			$.get(this.templateHTML, function(templateData){

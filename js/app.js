@@ -18,40 +18,23 @@ define('app', [
 
 
 		/** Application initialization
-		*/
+		 */
 		init: function() {
 
-			// Load configuration and properties files //
-			this.loadFiles().done(function() {
+			// Load properties files //
+			$.get('package.json').done(function(properties) {
+
+				Common.properties = properties;
 
 				// Router initialization //
 				Common.router = new Router();
 
 				// Listen url changes //
 				Backbone.history.start({pushState: false});
-			});
-		},
-
-
-
-		/** Load files
-		*/
-		loadFiles: function() {
-
-			// Retrieve App properties, configuration and language //
-			return $.when($.get('config/configuration.json'), $.get('package.json')).then(function(properties_data, configuration_data) {
-
-					// Set the app properties configuration and language //
-					Common.properties	 = configuration_data[0];
-					Common.configuration = properties_data[0];
-
-					// Set the Ajax Setup //
-					//app.setAjaxSetup();
 			})
 			.fail(function() {
-				window.alert('Unable to init the app: Configuration file missing');
+				throw new Error('Unable to init the app: Properties file missing');
 			});
-
 		}
 
 	};

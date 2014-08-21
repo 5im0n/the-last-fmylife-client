@@ -12,9 +12,9 @@ requirejs.config({
 
 	paths: {
 
-		/* #############
-		* Libs
-		*/
+		/**
+		 * Libs
+		 */
 		jquery				: '../bower_components/jquery/dist/jquery',
 		underscore			: '../bower_components/underscore/underscore',
 		backbone			: '../bower_components/backbone/backbone',
@@ -26,15 +26,27 @@ requirejs.config({
 		common              : 'common',
 
 
-		/* #############
-		* Routers
-		*/
+		/**
+		 * Routers
+		 */
 		router			    : 'routers/router',
 
 
-		/* #############
-		* Views
-		*/
+		/**
+		 * Models
+		 */
+		story			    : 'models/story',
+
+
+		/**
+		 * Collections
+		 */
+		stories			    : 'collections/stories',
+
+
+		/**
+		 * Views
+		 */
 		headerView			: 'views/header',
 		footerView			: 'views/footer',
 		aboutView			: 'views/about',
@@ -53,8 +65,8 @@ requirejs.config({
 
 
 /******************************************
-* Start The App
-*/
+ * Start The App
+ */
 require([
 	'app', 'underscore', 'underscore.string'
 ], function(app, _, _s) {
