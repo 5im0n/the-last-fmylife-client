@@ -30,7 +30,7 @@ define('app', [
 				Common.router = new Router();
 
 				// Listen url changes //
-				Backbone.history.start({pushState: false});
+				Backbone.history.start({ pushState: false });
 			})
 			.fail(function() {
 				throw new Error('Unable to init the app: Properties file missing');

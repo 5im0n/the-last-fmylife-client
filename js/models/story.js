@@ -34,7 +34,7 @@ define([
 		/** Validate model function
 		 */
 		validate: function(attrs) {
-			if(attrs.content === '') {
+			if (attrs.content === '') {
 				return 'Can\'t be empty';
 			}
 		}

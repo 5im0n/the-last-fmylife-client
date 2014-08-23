@@ -57,7 +57,7 @@ define([
 			var self = this;
 
 			// Get the author of the stories for the first time //
-			if(_.isUndefined(Common.authors)) {
+			if (_.isUndefined(Common.authors)) {
 				Common.authors = this.getAuthors();
 			}
 

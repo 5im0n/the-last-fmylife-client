@@ -40,7 +40,7 @@ define([
 
 			Common.router.setPageTitle('About the app'); // Change the page title
 
-			$.get(this.templateHTML, function(templateData){
+			$.get(this.templateHTML, function(templateData) {
 
 				// Templating //
 				var template = _.template(templateData, {

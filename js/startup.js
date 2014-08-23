@@ -22,26 +22,26 @@ requirejs.config({
 		bootstrap			: '../bower_components/bootstrap/dist/js/bootstrap',
 		'underscore.string'	: '../bower_components/underscore.string/lib/underscore.string',
 
-		app					: 'app',
+		app                 : 'app',
 		common              : 'common',
 
 
 		/**
 		 * Routers
 		 */
-		router			    : 'routers/router',
+		router             : 'routers/router',
 
 
 		/**
 		 * Models
 		 */
-		story			    : 'models/story',
+		story              : 'models/story',
 
 
 		/**
 		 * Collections
 		 */
-		stories			    : 'collections/stories',
+		stories            : 'collections/stories',
 
 
 		/**
@@ -56,8 +56,8 @@ requirejs.config({
 
 	},
 
-	'bootstrap': {
-  		deps   : ['jquery'],
+	bootstrap: {
+		deps   : ['jquery'],
 		exports: 'bootstrap'
 	}
 

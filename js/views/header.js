@@ -48,7 +48,7 @@ define([
 				self.$el.find('.nav.nav-pills li').each(function() {
 					$(this).removeClass('active');
 
-					if($(this).children('a').attr('href') === '#'+Backbone.history.fragment) {
+					if ($(this).children('a').attr('href') === '#' + Backbone.history.fragment) {
 						$(this).addClass('active');
 					}
 				});
@@ -59,9 +59,9 @@ define([
 		},
 
 
-		preventDefault: function(event){
+		preventDefault: function(event) {
 			event.preventDefault();
-		},
+		}
 
 
 	});

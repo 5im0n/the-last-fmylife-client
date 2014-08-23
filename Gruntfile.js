@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 
 
 	// Load the Tasks //
-	require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
+	require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
 
 
 	// Check tasks //

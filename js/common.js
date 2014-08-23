@@ -14,7 +14,7 @@ define('common', function() {
 		collections		: {},
 		views			: {},
 		properties		: {},
-		configuration	: {},
+		configuration	: {}
 
 	};
 

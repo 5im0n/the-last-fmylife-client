@@ -29,8 +29,8 @@ define([
 		routes: {
 			''                     : 'index',
 			'posts/author/:author' : 'index',
-			'about'                : 'about',
-			'*invalidRoute'	       : 'notFound'
+			about                  : 'about',
+			'*invalidRoute'        : 'notFound'
 		},
 
 
@@ -71,8 +71,8 @@ define([
 		index: function(author) {
 			var params = {};
 
-			if(!_.isNull(author)) {
-				params = {author: author};
+			if (!_.isNull(author)) {
+				params = { author: author };
 			}
 
 			Common.views.main = new StoriesView(params);
