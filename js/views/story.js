@@ -8,11 +8,9 @@ define([
 	'jquery',
 	'backbone',
 	'moment',
-	'bootstrap',
+	'bootstrap'
 
-	'story'
-
-], function($, Backbone, moment, Story, bootstrap) {
+], function($, Backbone, moment) {
 
 	'use strict';
 

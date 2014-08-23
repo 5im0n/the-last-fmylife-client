@@ -51,7 +51,7 @@ define([
 					if($(this).children('a').attr('href') === '#'+Backbone.history.fragment) {
 						$(this).addClass('active');
 					}
-				})
+				});
 
 			});
 

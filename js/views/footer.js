@@ -47,8 +47,6 @@ define([
 				});
 
 				self.$el.html(template);
-
-				$('*[data-toggle="tooltip"]').tooltip();
 			});
 
 			return this;

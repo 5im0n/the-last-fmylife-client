@@ -72,8 +72,9 @@ define([
 			var params = {};
 
 			if(!_.isNull(author)) {
-				var params = {author: author};
+				params = {author: author};
 			}
+
 			Common.views.main = new StoriesView(params);
 		},
 
