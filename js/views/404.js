@@ -6,9 +6,10 @@
 
 define([
 	'jquery',
-	'backbone'
+	'backbone',
+	'common'
 
-], function($, Backbone) {
+], function($, Backbone, Common) {
 
 	'use strict';
 
@@ -35,6 +36,8 @@ define([
 		*/
 		render: function() {
 			var self = this;
+
+			Common.router.setPageTitle('Page not found'); // Change the page title
 
 			$.get(this.templateHTML, function(templateData) {
 

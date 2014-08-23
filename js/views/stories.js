@@ -7,11 +7,12 @@
 define([
 	'jquery',
 	'backbone',
+	'common',
 
 	'stories',
 	'storyView'
 
-], function($, Backbone, Stories, StoryView) {
+], function($, Backbone, Common, Stories, StoryView) {
 
 	'use strict';
 
@@ -35,13 +36,15 @@ define([
 
 		/** View Initialization
 		*/
-		initialize: function() {
+		initialize: function(options) {
 			var self = this;
+
+			Common.router.setPageTitle('Fmylife stories'); // Change the page title
 
 			this.cStories = new Stories();
 
 			// Fetch the collection //
-			this.cStories.fetch().done(function() {
+			this.cStories.fetch({ data: options }).done(function() {
 				self.render();
 			});
 		},
@@ -53,11 +56,16 @@ define([
 		render: function() {
 			var self = this;
 
+			// Get the author of the stories for the first time //
+			if(_.isUndefined(Common.authors)) {
+				Common.authors = this.getAuthors();
+			}
+
 			$.get(this.templateHTML, function(templateData) {
 
 				var template = _.template(templateData, {
 					numberOfStories	: self.cStories.count,
-					authors			: self.getAuthors()
+					authors			: Common.authors
 				});
 
 				self.$el.html(template);

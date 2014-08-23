@@ -1,8 +1,11 @@
-<div class="container">
+<div class="row">
 
 	<div class="col-sm-9">
-		<span class="label label-info"><%= numberOfStories %> stories</span>
-		<button class="btn btn-primary disabled pull-right">New story</button>
+		<div class="header-bar">
+			<span class="label label-info"><%= numberOfStories %> stories</span>
+			<button class="btn btn-primary disabled pull-right">New story</button>
+		</div>
+		<div class="clearfix"></div>
 
 		<div id="stories-container"></div>
 	</div>
@@ -17,7 +20,7 @@
 				<!-- Loop over the authors -->
 				<ul>
 					<% _.each(authors, function(a){ %>
-						<li><a href="#posts?author=<%= _.slugify(a.attributes.author) %>"><%= a.attributes.author %></a></li>
+						<li><a href="#posts/author/<%= _.slugify(a.attributes.author) %>"><%= a.attributes.author %></a></li>
 					<% }) %>
 				</ul><!-- /Loop over the authors -->
 			</div>

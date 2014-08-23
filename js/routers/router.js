@@ -27,9 +27,10 @@ define([
 
 
 		routes: {
-			''				: 'index',
-			'about'			: 'about',
-			'*invalidRoute'	: 'notFound'
+			''                     : 'index',
+			'posts/author/:author' : 'index',
+			'about'                : 'about',
+			'*invalidRoute'	       : 'notFound'
 		},
 
 
@@ -67,8 +68,13 @@ define([
 
 		/** Home page
 		*/
-		index: function() {
-			Common.views.main = new StoriesView();
+		index: function(author) {
+			var params = {};
+
+			if(!_.isNull(author)) {
+				var params = {author: author};
+			}
+			Common.views.main = new StoriesView(params);
 		},
 
 
