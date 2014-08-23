@@ -41,11 +41,11 @@ define([
 					currentUrl: Backbone.history.fragment
 				});
 
-				$(self.el).html(template);
+				self.$el.html(template);
 
 
 				// Set menu as active //
-				$(self.el).find('.nav.nav-pills li').each(function() {
+				self.$el.find('.nav.nav-pills li').each(function() {
 					$(this).removeClass('active');
 
 					if($(this).children('a').attr('href') === '#'+Backbone.history.fragment) {
@@ -55,6 +55,7 @@ define([
 
 			});
 
+			return this;
 		},
 
 

@@ -51,6 +51,7 @@ requirejs.config({
 		footerView			: 'views/footer',
 		aboutView			: 'views/about',
 		storiesView         : 'views/stories',
+		storyView           : 'views/story',
 		notFoundView        : 'views/404'
 
 	},

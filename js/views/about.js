@@ -44,9 +44,7 @@ define([
 				var template = _.template(templateData, {
 				});
 
-				$(self.el).html(template);
-
-				//$('*[data-toggle="tooltip"]').tooltip();
+				self.$el.html(template);
 			});
 
 			return this;

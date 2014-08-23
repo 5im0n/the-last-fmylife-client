@@ -8,9 +8,10 @@ define([
 	'jquery',
 	'backbone',
 
-	'stories'
+	'stories',
+	'storyView'
 
-], function($, Backbone, Stories) {
+], function($, Backbone, Stories, StoryView) {
 
 	'use strict';
 
@@ -37,10 +38,10 @@ define([
 		initialize: function() {
 			var self = this;
 
-			this.s = new Stories();
+			this.cStories = new Stories();
 
 			// Fetch the collection //
-			this.s.fetch().done(function() {
+			this.cStories.fetch().done(function() {
 				self.render();
 			});
 		},
@@ -55,13 +56,31 @@ define([
 			$.get(this.templateHTML, function(templateData) {
 
 				var template = _.template(templateData, {
-					numberOfStories: self.s.count
+					numberOfStories	: self.cStories.count,
+					authors			: self.getAuthors()
 				});
 
-				$(self.el).html(template);
+				self.$el.html(template);
+
+				// Create item Story View //
+				_.each(self.cStories.models, function(s) {
+					var view = new StoryView({ model: s });
+					self.$el.find('#stories-container').append(view.render().el);
+				});
 
 			});
 
+			return this;
+		},
+
+
+
+		/** Get the authors of the stories
+		*/
+		getAuthors: function() {
+			return _.uniq(this.cStories.models, function(s) {
+				return (s.attributes.author);
+			});
 		}
 
 	});

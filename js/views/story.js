@@ -5,31 +5,31 @@
  */
 
 define([
-	'common',
 	'jquery',
 	'backbone',
-	'bootstrap'
+	'moment',
+	'bootstrap',
 
-], function(Common, $, Backbone) {
+	'story'
+
+], function($, Backbone, moment, Story, bootstrap) {
 
 	'use strict';
 
 
 	/******************************************
-	* Footer View
+	* Story View
 	*/
-	var FooterView = Backbone.View.extend({
+	var StoryView = Backbone.View.extend({
 
-		el           : '#page-footer',
+		tagName       : 'div',
 
-		templateHTML : 'templates/footer.html',
+		templateHTML  : 'templates/story.html',
 
 
+		// The DOM events //
+		events: {
 
-		/** View Initialization
-		*/
-		initialize: function() {
-			this.render();
 		},
 
 
@@ -41,22 +41,22 @@ define([
 
 			$.get(this.templateHTML, function(templateData) {
 
-				// Templating //
 				var template = _.template(templateData, {
-					prop: Common.properties
+					story  : self.model.toJSON(),
+					moment : moment
 				});
 
 				self.$el.html(template);
 
 				$('*[data-toggle="tooltip"]').tooltip();
+
 			});
 
 			return this;
 		}
 
-
 	});
 
-	return FooterView;
+	return StoryView;
 
 });

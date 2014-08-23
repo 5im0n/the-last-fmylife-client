@@ -40,10 +40,11 @@ define([
 
 				var template = _.template(templateData);
 
-				$(self.el).html(template);
+				self.$el.html(template);
 
 			});
 
+			return this;
 		}
 
 	});

@@ -11,10 +11,15 @@
 	<div class="col-sm-3">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title">Authors</h3>
+				<h3 class="panel-title">Authors <span class="badge pull-right"><%= _.size(authors) %></span></h3>
 			</div>
 			<div class="panel-body">
-				Authors come here
+				<!-- Loop over the authors -->
+				<ul>
+					<% _.each(authors, function(a){ %>
+						<li><a href="#posts?author=<%= _.slugify(a.attributes.author) %>"><%= a.attributes.author %></a></li>
+					<% }) %>
+				</ul><!-- /Loop over the authors -->
 			</div>
 		</div>
 	</div><!-- /Side bar -->

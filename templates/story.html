@@ -1,0 +1,13 @@
+<div class="media well">
+	<a class="pull-left" href="http://placekitten.com/101/101">
+		<img class="media-object img-rounded" src="http://placekitten.com/101/101" alt="placekitten">
+	</a>
+	<div class="media-body">
+		<h4 class="media-heading"><a href="http://www.viedemerde.fr/<%= story.id %>">#<%= story.id %></a></h4>
+		<p><%= story.content %></p>
+		<p class="pull-right text-muted">
+			<span data-toggle="tooltip" data-original-title="<%= moment(story.date).fromNow() %>">On <u><%= moment(story.date).format('LLL') %></u></span>
+			- <i class="fa fa-user"></i> by <a href="#posts?author=<%= _.slugify(story.author) %>"><%= story.author %></a>
+		</p>
+	</div>
+</div>
