@@ -1,6 +1,6 @@
 {
   "name": "the-last-fmylife-client",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Client app to display the last fmylife stories",
   "author": "Simon MAHÉ <mahe.simon@gmail.com>",
   "private": true,
