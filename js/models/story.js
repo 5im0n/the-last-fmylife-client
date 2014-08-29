@@ -19,9 +19,6 @@ define([
 	var StoryModel = Backbone.Model.extend({
 
 
-		url: '/posts',
-
-
 		// Defaults values //
 		defaults:{
 			id		: null,

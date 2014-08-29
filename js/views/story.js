@@ -27,7 +27,7 @@ define([
 
 		// The DOM events //
 		events: {
-
+			'click small[data-action="delete-story"]'  : 'deleteStory'
 		},
 
 
@@ -51,7 +51,29 @@ define([
 			});
 
 			return this;
+		},
+
+
+
+		/** Function to delete the story
+		*/
+		deleteStory: function() {
+			var self = this;
+
+			this.model.destroy({
+				success: function() {
+					// Animate and delete the DOM element //
+					self.$el.slideUp('slow', function() {
+						self.$el.remove();
+					});
+				},
+				error: function() {
+					throw new Error('Unable to delete the story');
+				}
+
+			});
 		}
+
 
 	});
 

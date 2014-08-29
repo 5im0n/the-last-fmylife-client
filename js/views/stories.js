@@ -70,11 +70,17 @@ define([
 
 				self.$el.html(template);
 
-				// Create item Story View //
-				_.each(self.cStories.models, function(s) {
-					var view = new StoryView({ model: s });
-					self.$el.find('#stories-container').append(view.render().el);
-				});
+				if (!_.isEmpty(self.cStories.models)) {
+
+					// Create item Story View //
+					_.each(self.cStories.models, function(s) {
+						var view = new StoryView({ model: s });
+						self.$el.find('#stories-container').append(view.render().el);
+					});
+				}
+				else {
+					self.$el.find('.alert').removeClass('hide');
+				}
 
 			});
 

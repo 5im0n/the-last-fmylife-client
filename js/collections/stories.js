@@ -22,7 +22,7 @@ define([
 
 		model: Story,
 
-		url: 'http://192.168.182.129:8081/api/posts',
+		url: '/api/posts',
 
 		count: 0,
 
